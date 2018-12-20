@@ -23,8 +23,14 @@ class ViewController: UIViewController {
     // create view text filds with labels
     let descriptionTextView: UITextView = {
        let textView = UITextView()
-        textView.text = "Join to our army of brown bears!"
-        textView.font = UIFont.boldSystemFont(ofSize: 24)
+        
+        let attributedText = NSMutableAttributedString(string: "Join to our army of brown bears!", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24)])
+        attributedText.append(NSAttributedString(string: "We are fluffy, we can be ironed and we have cookies. Every day we will cuddle. Join us.", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
+        
+        textView.attributedText = attributedText
+        
+//        textView.text = "Join to our army of brown bears!"
+//        textView.font = UIFont.boldSystemFont(ofSize: 24)
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = .white
         textView.textAlignment = .center
