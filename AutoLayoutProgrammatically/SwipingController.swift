@@ -10,12 +10,13 @@ import UIKit
 
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
+
     let pages = [
         Page(imageName: "mishalov", headerText: "Join us today in out", bodyText: "Coming soon to rada!"),
         Page(imageName: "petrenko", headerText: "More bitcoins and keepers slicly", bodyText: "Hey YOOOO!"),
         Page(imageName: "shishkin", headerText: "Wash informator out VIP", bodyText: "OOPS KASHER"),
-        Page(imageName: "shevchuk", headerText: "Granade!!!!!!!!", bodyText: "BURN IN MONEY")
+        Page(imageName: "shevchuk", headerText: "Granade!!!!!!!!", bodyText: "BURN IN MONEY"),
+        Page(imageName: "cherniy", headerText: "Careful cowboy", bodyText: "Too hoooooooot!")
     ]
     
     private let previousButton: UIButton = {
@@ -29,18 +30,18 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     }()
     
     @objc private func handlePrevious() {
-//        print("Trying to advance previous")
-
+        //        print("Trying to advance previous")
+        
         let previousIndex = max(pageControl.currentPage - 1, 0)
-
+        
         let indexPath = IndexPath(item: previousIndex, section: 0)
         pageControl.currentPage = previousIndex
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
     private let nextButton: UIButton = {
-//        print("Trying to advance next")
-
+        //        print("Trying to advance next")
+        
         let button = UIButton(type: .system)
         button.setTitle("NEXT", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +59,7 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
-    private lazy var pageControl: UIPageControl = {
+     lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
         pc.numberOfPages = pages.count
@@ -128,8 +129,8 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         cell.page = page
         
         
-//        cell.bearImageView.image = UIImage(named: page.imageName)
-//        cell.descriptionTextView.text = page.headerText
+        //        cell.bearImageView.image = UIImage(named: page.imageName)
+        //        cell.descriptionTextView.text = page.headerText
         
         //        let imageName = imageNames[indexPath.item]
         //        cell.bearImageView.image = UIImage(named: imageName)
