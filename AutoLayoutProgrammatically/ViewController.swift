@@ -25,7 +25,8 @@ class ViewController: UIViewController {
        let textView = UITextView()
         
         let attributedText = NSMutableAttributedString(string: "Join to our army of brown bears!", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24)])
-        attributedText.append(NSAttributedString(string: "\n\n\nWe are fluffy, we can be ironed and we have cookies. \nEvery day you can cuddle us. \nJoin us.", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
+        attributedText.append(NSAttributedString(string: "\n\n\nWe are fluffy, we can be ironed and we have cookies. \nEvery day you can cuddle us. \nJoin us."
+, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
         
         textView.attributedText = attributedText
         
@@ -39,6 +40,34 @@ class ViewController: UIViewController {
         return textView
     }()
     
+    // make sure you apple the correct encapsulation principles in your classes
+    // crete previous buttons
+    private let previousButton: UIButton = {
+       let button = UIButton(type: .system)
+        button.setTitle("PREV", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.gray, for: .normal)
+        return button
+    }()
+    
+    private let nextButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("NEXT", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+
+        return button
+    }()
+    
+    private let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.currentPage = 0
+        pc.numberOfPages = 4
+        pc.currentPageIndicatorTintColor = .red
+        return pc
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // entry point into app
@@ -48,6 +77,9 @@ class ViewController: UIViewController {
         
 //        view.addSubview(bearImageView)
         view.addSubview(descriptionTextView)
+        
+        setupButtonControls()
+        
 //        setupView()
         setupLayout()
         
@@ -62,6 +94,46 @@ class ViewController: UIViewController {
         //        bearImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
     }
+    fileprivate func setupButtonControls() {
+//        view.addSubview(previousButton)
+//        previousButton.backgroundColor = .red
+//        previousButton.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        
+//        let yellowView = UIView()
+//        yellowView.backgroundColor = .yellow
+        
+//        let greenView = UIView()
+//        greenView.backgroundColor = .green
+        
+//        let blueView = UIView()
+//        blueView.backgroundColor = .blue
+        
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [previousButton, pageControl, nextButton])
+        bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomControlsStackView.distribution = .fillEqually
+//        bottomControlsStackView.axis = .vertical
+        
+        
+        view.addSubview(bottomControlsStackView)
+        
+        // border of iPhone X upper safe area
+//        NSLayoutConstraint.activate([
+//            previousButton.topAnchor.constraint(equalTo: view.topAnchor),
+//            previousButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            previousButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            previousButton.heightAnchor.constraint(equalToConstant: 50)
+//            ])
+        
+        NSLayoutConstraint.activate([
+//            previousButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50)
+            ])
+    }
+    
+    
     private func setupLayout() {
         // added blue
         let topImageContainerView = UIView()
