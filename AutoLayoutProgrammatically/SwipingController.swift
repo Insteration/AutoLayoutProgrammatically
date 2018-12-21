@@ -12,11 +12,14 @@ import UIKit
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let pages = [
-        Page(imageName: "mishalov", headerText: "Join us today in out", bodyText: "Coming soon to rada!"),
-        Page(imageName: "petrenko", headerText: "More bitcoins and keepers slicly", bodyText: "Hey YOOOO!"),
-        Page(imageName: "shishkin", headerText: "Wash informator out VIP", bodyText: "OOPS KASHER"),
-        Page(imageName: "shevchuk", headerText: "Granade!!!!!!!!", bodyText: "BURN IN MONEY"),
-        Page(imageName: "cherniy", headerText: "Careful cowboy", bodyText: "Too hoooooooot!")
+        Page(imageName: "mishalov", headerText: "Слава", bodyText: "Че там у Фрегата?"),
+        Page(imageName: "petrenko", headerText: "Костян", bodyText: "Меня лучше не трогайте."),
+        Page(imageName: "shishkin", headerText: "Серёга 'Шиша Информатрикс'", bodyText: "Киношные ленты однако."),
+        Page(imageName: "artem", headerText: "Артёмчик", bodyText: "Есть код? А если найду? Вашему коду недоджуниор не нужен?"),
+        Page(imageName: "shevchuk", headerText: "Димон", bodyText: "Кальян и деньги - это мои два орудия."),
+        Page(imageName: "cherniy", headerText: "Санёчек 'ОПАСНОСТЬ'", bodyText: "Эй детка, не хочешь немного любви?"),
+        Page(imageName: "gurin", headerText: "Майор Гурин", bodyText: "Тайное становится явным, следствие идёт."),
+        Page(imageName: "galat", headerText: "Mr. G", bodyText: "353  VLAN353 D4-CA-6D-52-50-AA 22 Dynamic")
     ]
     
     private let previousButton: UIButton = {
@@ -114,40 +117,5 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     // delete spacing tab when swiping cells
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pages.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
-        
-        let page = pages[indexPath.item]
-        cell.page = page
-        
-        
-        //        cell.bearImageView.image = UIImage(named: page.imageName)
-        //        cell.descriptionTextView.text = page.headerText
-        
-        //        let imageName = imageNames[indexPath.item]
-        //        cell.bearImageView.image = UIImage(named: imageName)
-        //        cell.descriptionTextView.text = headerStrings[indexPath.item]
-        
-        //  definitely don't try this, it is a very bad idea!!!!!
-        //        let imageView = UIImageView()
-        //        cell.addSubview(imageView)
-        
-        // added random color for cell - red - green - red - green etc
-        //        cell.backgroundColor = indexPath.item % 2 == 0 ? .red : .green
-        return cell
-    }
-    
-    // cell on fullscreen
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-        //        return CGSize(width: 100, height: 100)
-    }
+   
 }

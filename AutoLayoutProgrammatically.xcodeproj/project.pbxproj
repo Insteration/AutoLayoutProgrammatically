@@ -16,6 +16,7 @@
 		D924B2AE21CD01AE00E30730 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2AD21CD01AE00E30730 /* PageCell.swift */; };
 		D924B2B021CD116C00E30730 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2AF21CD116C00E30730 /* Page.swift */; };
 		D924B2B221CD2BE400E30730 /* SwipingControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2B121CD2BE400E30730 /* SwipingControllerExtension.swift */; };
+		D924B2B421CD2C7900E30730 /* SwipingController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2B321CD2C7900E30730 /* SwipingController+UICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D924B2AD21CD01AE00E30730 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		D924B2AF21CD116C00E30730 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		D924B2B121CD2BE400E30730 /* SwipingControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingControllerExtension.swift; sourceTree = "<group>"; };
+		D924B2B321CD2C7900E30730 /* SwipingController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwipingController+UICollectionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				D924B2AD21CD01AE00E30730 /* PageCell.swift */,
 				D924B2AF21CD116C00E30730 /* Page.swift */,
 				D924B2AB21CCF59700E30730 /* SwipingController.swift */,
+				D924B2B321CD2C7900E30730 /* SwipingController+UICollectionView.swift */,
 				D924B2B121CD2BE400E30730 /* SwipingControllerExtension.swift */,
 				D924B29D21CBDA3600E30730 /* Main.storyboard */,
 				D924B2A021CBDA3600E30730 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				D924B2B221CD2BE400E30730 /* SwipingControllerExtension.swift in Sources */,
 				D924B29C21CBDA3600E30730 /* ViewController.swift in Sources */,
 				D924B29A21CBDA3600E30730 /* AppDelegate.swift in Sources */,
+				D924B2B421CD2C7900E30730 /* SwipingController+UICollectionView.swift in Sources */,
 				D924B2AE21CD01AE00E30730 /* PageCell.swift in Sources */,
 				D924B2AC21CCF59700E30730 /* SwipingController.swift in Sources */,
 				D924B2B021CD116C00E30730 /* Page.swift in Sources */,
