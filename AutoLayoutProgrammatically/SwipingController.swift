@@ -30,14 +30,19 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        
+        //  definitely don't try this, it is a very bad idea!!!!!
+        //        let imageView = UIImageView()
+        //        cell.addSubview(imageView)
+        
         // added random color for cell - red - green - red - green etc
-//        cell.backgroundColor = indexPath.item % 2 == 0 ? .red : .green
+        //        cell.backgroundColor = indexPath.item % 2 == 0 ? .red : .green
         return cell
     }
     
     // cell on fullscreen
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
-//        return CGSize(width: 100, height: 100)
+        //        return CGSize(width: 100, height: 100)
     }
 }
