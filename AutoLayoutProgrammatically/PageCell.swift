@@ -10,7 +10,23 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
     
-    let bearImageView: UIImageView = {
+    var page: Page? {
+        didSet {
+            //            print(page?.imageName)
+            
+            guard let unwrappedPage = page else { return }
+            bearImageView.image = UIImage(named: unwrappedPage.imageName)
+            
+            let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24)])
+            
+            attributedText.append(NSAttributedString(string: "\n\n\n\(unwrappedPage.bodyText)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
+            
+            descriptionTextView.attributedText = attributedText
+            descriptionTextView.textAlignment = .center
+        }
+    }
+    
+    private let bearImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "mishalov"))
         // this enable autolayout for our image view
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,16 +34,16 @@ class PageCell: UICollectionViewCell {
         return imageView
     }()
     
-    let descriptionTextView: UITextView = {
+    private let descriptionTextView: UITextView = {
         let textView = UITextView()
         
         let attributedText = NSMutableAttributedString(string: "Join to our army of brown bears!", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24)])
         attributedText.append(NSAttributedString(string: "\n\n\nWe are fluffy, we can be ironed and we have cookies. \nEvery day you can cuddle us. \nJoin us."
             , attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
         
-//        let attributedText = NSMutableAttributedString(string: "Join to our army of brown bears!", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24)])
-//        attributedText.append(NSAttributedString(string: "\n\n\nWe are fluffy, we can be ironed and we have cookies. \nEvery day you can cuddle us. \nJoin us."
-//            , attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
+        //        let attributedText = NSMutableAttributedString(string: "Join to our army of brown bears!", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 24)])
+        //        attributedText.append(NSAttributedString(string: "\n\n\nWe are fluffy, we can be ironed and we have cookies. \nEvery day you can cuddle us. \nJoin us."
+        //            , attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.gray]))
         
         textView.attributedText = attributedText
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +64,7 @@ class PageCell: UICollectionViewCell {
         // added blue
         let topImageContainerView = UIView()
         addSubview(topImageContainerView)
-
+        
         topImageContainerView.translatesAutoresizingMaskIntoConstraints = false
         topImageContainerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         topImageContainerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

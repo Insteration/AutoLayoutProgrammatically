@@ -9,17 +9,20 @@
 import UIKit
 
 struct Page {
+    
     let imageName: String
     let headerText: String
+    let bodyText: String
+    
 }
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let pages = [
-        Page(imageName: "mishalov", headerText: "Join us today in out"),
-        Page(imageName: "petrenko", headerText: "More bitcoins and keepers slicly"),
-        Page(imageName: "shishkin", headerText: "Wash informator out VIP"),
-        Page(imageName: "shevchuk", headerText: "Granade!!!!!!!!")
+        Page(imageName: "mishalov", headerText: "Join us today in out", bodyText: "Coming soon to rada!"),
+        Page(imageName: "petrenko", headerText: "More bitcoins and keepers slicly", bodyText: "Hey YOOOO!"),
+        Page(imageName: "shishkin", headerText: "Wash informator out VIP", bodyText: "OOPS KASHER"),
+        Page(imageName: "shevchuk", headerText: "Granade!!!!!!!!", bodyText: "BURN IN MONEY")
     ]
     
     //    let imageNames = ["mishalov", "petrenko", "shishkin", "shevchuk"]
@@ -46,8 +49,11 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
         
         let page = pages[indexPath.item]
-        cell.bearImageView.image = UIImage(named: page.imageName)
-        cell.descriptionTextView.text = page.headerText
+        cell.page = page
+        
+        
+//        cell.bearImageView.image = UIImage(named: page.imageName)
+//        cell.descriptionTextView.text = page.headerText
         
         //        let imageName = imageNames[indexPath.item]
         //        cell.bearImageView.image = UIImage(named: imageName)
