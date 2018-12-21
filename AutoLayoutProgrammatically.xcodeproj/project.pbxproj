@@ -12,6 +12,8 @@
 		D924B29F21CBDA3600E30730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D924B29D21CBDA3600E30730 /* Main.storyboard */; };
 		D924B2A121CBDA3600E30730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D924B2A021CBDA3600E30730 /* Assets.xcassets */; };
 		D924B2A421CBDA3600E30730 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D924B2A221CBDA3600E30730 /* LaunchScreen.storyboard */; };
+		D924B2AC21CCF59700E30730 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2AB21CCF59700E30730 /* SwipingController.swift */; };
+		D924B2AE21CD01AE00E30730 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2AD21CD01AE00E30730 /* PageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D924B2A021CBDA3600E30730 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D924B2A321CBDA3600E30730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D924B2A521CBDA3600E30730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D924B2AB21CCF59700E30730 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
+		D924B2AD21CD01AE00E30730 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				D924B29921CBDA3600E30730 /* AppDelegate.swift */,
 				D924B29B21CBDA3600E30730 /* ViewController.swift */,
+				D924B2AB21CCF59700E30730 /* SwipingController.swift */,
+				D924B2AD21CD01AE00E30730 /* PageCell.swift */,
 				D924B29D21CBDA3600E30730 /* Main.storyboard */,
 				D924B2A021CBDA3600E30730 /* Assets.xcassets */,
 				D924B2A221CBDA3600E30730 /* LaunchScreen.storyboard */,
@@ -137,6 +143,8 @@
 			files = (
 				D924B29C21CBDA3600E30730 /* ViewController.swift in Sources */,
 				D924B29A21CBDA3600E30730 /* AppDelegate.swift in Sources */,
+				D924B2AE21CD01AE00E30730 /* PageCell.swift in Sources */,
+				D924B2AC21CCF59700E30730 /* SwipingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
