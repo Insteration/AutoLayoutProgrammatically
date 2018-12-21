@@ -14,6 +14,7 @@
 		D924B2A421CBDA3600E30730 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D924B2A221CBDA3600E30730 /* LaunchScreen.storyboard */; };
 		D924B2AC21CCF59700E30730 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2AB21CCF59700E30730 /* SwipingController.swift */; };
 		D924B2AE21CD01AE00E30730 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2AD21CD01AE00E30730 /* PageCell.swift */; };
+		D924B2B021CD116C00E30730 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924B2AF21CD116C00E30730 /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D924B2A521CBDA3600E30730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D924B2AB21CCF59700E30730 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		D924B2AD21CD01AE00E30730 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		D924B2AF21CD116C00E30730 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 			children = (
 				D924B29921CBDA3600E30730 /* AppDelegate.swift */,
 				D924B29B21CBDA3600E30730 /* ViewController.swift */,
-				D924B2AB21CCF59700E30730 /* SwipingController.swift */,
 				D924B2AD21CD01AE00E30730 /* PageCell.swift */,
+				D924B2AF21CD116C00E30730 /* Page.swift */,
+				D924B2AB21CCF59700E30730 /* SwipingController.swift */,
 				D924B29D21CBDA3600E30730 /* Main.storyboard */,
 				D924B2A021CBDA3600E30730 /* Assets.xcassets */,
 				D924B2A221CBDA3600E30730 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				D924B29A21CBDA3600E30730 /* AppDelegate.swift in Sources */,
 				D924B2AE21CD01AE00E30730 /* PageCell.swift in Sources */,
 				D924B2AC21CCF59700E30730 /* SwipingController.swift in Sources */,
+				D924B2B021CD116C00E30730 /* Page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

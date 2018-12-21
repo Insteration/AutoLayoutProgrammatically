@@ -8,14 +8,28 @@
 
 import UIKit
 
+struct Page {
+    let imageName: String
+    let headerText: String
+}
+
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    let pages = [
+        Page(imageName: "mishalov", headerText: "Join us today in out"),
+        Page(imageName: "petrenko", headerText: "More bitcoins and keepers slicly"),
+        Page(imageName: "shishkin", headerText: "Wash informator out VIP"),
+        Page(imageName: "shevchuk", headerText: "Granade!!!!!!!!")
+    ]
+    
+    //    let imageNames = ["mishalov", "petrenko", "shishkin", "shevchuk"]
+    //    let headerStrings = ["Join us today in out", "More bitcoins and keepers slicly", "Wash informator out VIP", "Granade!!!!!!!!"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView?.backgroundColor = .white
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
-        
         collectionView.isPagingEnabled = true
     }
     
@@ -25,11 +39,19 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return pages.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
+        
+        let page = pages[indexPath.item]
+        cell.bearImageView.image = UIImage(named: page.imageName)
+        cell.descriptionTextView.text = page.headerText
+        
+        //        let imageName = imageNames[indexPath.item]
+        //        cell.bearImageView.image = UIImage(named: imageName)
+        //        cell.descriptionTextView.text = headerStrings[indexPath.item]
         
         //  definitely don't try this, it is a very bad idea!!!!!
         //        let imageView = UIImageView()
